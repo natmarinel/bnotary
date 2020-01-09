@@ -1,9 +1,13 @@
+#script to download ots files from api bnotary when file's verifyStatus is verified
+#use request get to download the files
+#when the file is downloaded, it is stored inside directory ./ots 
 import requests
 import json
 
 
 def download(url, ots):
- 
+    
+    print(url)
     response = requests.get(url)
     
     try:

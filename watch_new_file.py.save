@@ -8,22 +8,21 @@ from multiprocessing import Process
 if __name__ == "__main__":
     patterns = "*"
     ignore_patterns = "./file_to_be_notarized/"
-    #ignore directry creation
+    #ignora creazione di directory
     ignore_directories = True
     case_sensitive = True
     my_event_handler = PatternMatchingEventHandler(patterns,ignore_patterns, ignore_directories, case_sensitive)
 
 def on_created(event):
 
-    file_created = event.src_path
+    path_file_created = event.src_path
+    print(path_file_created)
+    print(type(path_file_created))
+    #file_created = open(path_file_created, 'rb')
+    file_created = path_file_created
     print(file_created)
     print(type(file_created))
-    #call_api(file_created)
-    #inizialized a varialble
-    #call function call_api which uses a process
-    #each time the variable is started it creates a new process
-    p = Process(target=call_api, args=(file_created,))
-    p.start()
+    c
 
 path = "./file_to_be_notarized/"
 my_event_handler.on_created = on_created
@@ -35,7 +34,7 @@ my_observer.start()
 
 try:
     while True:
-        time.sleep(0)
+        time.sleep(1)
 except KeyboardInterrupt:
     my_observer.stop()
     my_observer.join()

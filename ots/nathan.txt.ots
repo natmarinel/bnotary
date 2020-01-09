@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Error: ENOENT: no such file or directory, stat &#39;/var/www/notaryb-api/ots/0a23afe0bd19853e6c11f581cc6c59afe1fc6b208b471011cf2338a91e4094ba/1578333005010/1.txt.ots&#39;</pre>
+</body>
+</html>
