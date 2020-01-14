@@ -1,2 +1,0 @@
-a = 'ciao'
-print(a)
