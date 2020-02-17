@@ -14,7 +14,7 @@ def verify(hash, otsFilename, timestamp):
     print(otsFilename)
     print(type(otsFilename))
     url = 'https://notaryb-api.bcademy.it/api/v1/verify/file'
-    apiKey = '3581ca332d59abbbb665c6ec993642ab8c576b06e95e7a916e06edd6fd9b49ba'
+    apiKey = 'fcee94e161c3db5b0e8014f75c34b6c4c02ac415a7e2fe7057e4f0e0146cac77'
     headers = {'Content-Type': 'application/json', 'apiKey': apiKey}
     a = {'hash': hash, 'otsFilename': otsFilename, 'timestamp': timestamp}
 

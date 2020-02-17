@@ -11,13 +11,15 @@ def call_api(file):
     print("Inizio chiamata api bnotary\n")
     
     url = 'https://notaryb-api.bcademy.it/api/v1/upload/file'
-    apiKey = '3581ca332d59abbbb665c6ec993642ab8c576b06e95e7a916e06edd6fd9b49ba'
+    apiKey = 'fcee94e161c3db5b0e8014f75c34b6c4c02ac415a7e2fe7057e4f0e0146cac77'
     headers = {'apiKey' : apiKey, 'Content-Type' : 'application/x-www-form-urlencoded'}
-    file = file.replace('./file_to_be_notarized/','')
-    hashFile = file.encode('utf-8')
+    f = open(file, 'rb')
+    #hashFile = f.encode('utf-8')
+    hashFile = f.read()
     hashFile = hashlib.sha256(hashFile).hexdigest()
     print(hashFile)
-    hash = {'hash': hashFile, 'hashType' : 'SHA-256', 'filename': file }
+    filename = file.replace('./file_to_be_notarized/','')
+    hash = {'hash': hashFile, 'hashType' : 'SHA-256', 'filename': filename }
     #file = {'key':'file', 'type':'file', 'src': file}
     #file = {file : (file , open(file,'rb'), 'application/x-www-form-urlencoded', {'originalname': file})} 
     print(type(file))
